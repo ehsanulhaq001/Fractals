@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractals</title>
+    <script defer src="script.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: rgb(20, 20, 20);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #wrapper {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        #title {
+            display: block;
+            background-color: transparent;
+            color: lime;
+            text-transform: uppercase;
+            font-size: 40px;
+            text-align: center;
+            letter-spacing: 4px;
+            height: 100%;
+        }
+        
+        #bigHolder {
+            height: 100%;
+        }
+        
+        .holder {
+            display: flex;
+            margin: 20px;
+            background-color: rgb(25, 27, 25);
+            color: white;
+            padding: 20px;
+            font-size: 30px;
+            width: 240px;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <div id=wrapper>
+        <div id="title">
+            Fractals
+        </div>
+        <div id="bigHolder">
+            <div class="holder">
+                <input type="range" id="angle" min="0" max="180" value="22" step="1" onchange="start()"><span id="showAngle"></span>
+            </div>
+            <div class="holder">
+                <input type="range" id="ratio" min="1" max="10" value="3" step="0.1" onchange="start()"><span id="showRatio"></span>
+            </div>
+            <div class="holder">
+                <input type="color" id="leftColor" value="#FFFFFF" onchange="start()">
+                <input type="color" id="rightColor" value="#00FF09" onchange="start()">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
