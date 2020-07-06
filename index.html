@@ -29,6 +29,7 @@
         }
         
         #title {
+            z-index: 10;
             display: block;
             position: absolute;
             top: 0%;
@@ -42,9 +43,28 @@
         }
         
         #bigHolder {
+            z-index: 10;
+            display: none;
             position: absolute;
             bottom: 0%;
             right: 0%;
+        }
+        
+        #modify {
+            z-index: 10;
+            position: absolute;
+            bottom: 0%;
+            right: 0%;
+            color: rgba(255, 255, 255, 0.2);
+            /* background-color: rgba(255, 255, 255, 0.08); */
+            margin: 10px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        
+        #modify:hover {
+            color: lime;
         }
         
         .holder {
@@ -57,6 +77,18 @@
             width: 240px;
             justify-content: space-between;
         }
+        
+        #close {
+            display: block;
+            color: red;
+            bottom: 0%;
+            right: 0%;
+            text-align: end;
+            width: fit-content;
+            float: right;
+            margin: 20px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -66,6 +98,7 @@
             Fractals
         </div>
         <canvas id="canvas"></canvas>
+        <div id="modify" onclick="bigHolder(1)">Modify</div>
         <div id="bigHolder">
             <div class="holder">
                 <input type="range" id="angle" min="0" max="180" value="22" step="1" onchange="start()"><span id="showAngle"></span>
@@ -77,6 +110,7 @@
                 <input type="color" id="leftColor" value="#FFFFFF" onchange="start()">
                 <input type="color" id="rightColor" value="#00FF09" onchange="start()">
             </div>
+            <div id="close" onclick="bigHolder(0)">X</div>
         </div>
     </div>
 </body>

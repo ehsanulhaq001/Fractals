@@ -46,3 +46,15 @@ function branch(x, y, len, angle, color) {
         branch(x, y, len * 2 / 3, angle - r * ang, rightColor);
     }
 }
+
+
+function bigHolder(n) {
+    if (n == 1) {
+        document.querySelector("#modify").style.display = "none";
+        document.querySelector("#bigHolder").style.display = "block";
+    }
+    if (n == 0) {
+        document.querySelector("#modify").style.display = "block";
+        document.querySelector("#bigHolder").style.display = "none";
+    }
+}
